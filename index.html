@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container bg-info py-5 rounded-5">
+        <h1 class="text-center">crud system</h1>
+
+        <div>
+          <label for="productName">product name</label>
+          <input
+            oninput="nameValidation()"
+            type="text"
+            id="productName"
+            placeholder="enter product name..."
+            class="form-control"
+          />
+          <div class="alert alert-danger mt-1 d-none" id="nameError" role="alert">
+           name must start with capital letter followed by 3 to 5 char
+          </div>
+        </div>
+        <div>
+          <label for="productPrice">product price</label>
+          <input
+            type="text"
+            id="productPrice"
+            placeholder="enter product price..."
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="productType">product type</label>
+          <input
+            type="text"
+            id="productType"
+            placeholder="enter product type..."
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="productDesc">product Desc</label>
+          <input
+            type="text"
+            id="productDesc"
+            placeholder="enter product desc..."
+            class="form-control"
+          />
+        </div>
+        <!-- buttons -->
+        <div
+          class="d-flex justify-content-center flex-column align-items-center my-3"
+        >
+          <button
+            class="btn btn-dark px-5 w-50 rounded-5"
+            id="addProduct"
+            onclick="addItem()"
+          >
+            add product
+          </button>
+          <button
+            class="btn btn-dark px-5 w-50 rounded-5 d-none"
+            id="updateProduct"
+            onclick="updateItem()"
+          >
+            update product
+          </button>
+          <input
+            type="search"
+            oninput="search()"
+            class="form-control w-50 mt-3"
+            placeholder="search product"
+            id="searchProduct"
+          />
+        </div>
+        <!-- table -->
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">price</th>
+              <th scope="col">type</th>
+              <th scope="col">Desc</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
