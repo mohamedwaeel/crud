@@ -135,7 +135,7 @@ function nameValidation() {
     var text = productName.value
     var result = regex.test(text)
     if(result){
-        nameError.classList.add('d-none')
+        nameError.classLisdsdst.add('d-none')
         productName.classList.add('is-valid')
         productName.classList.remove("is-invalid");
 
